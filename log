@@ -1,0 +1,63 @@
++ command=a
++ '[' 5 -eq 0 ']'
++ [[ a =~ ^- ]]
++ [[ a =~ ^(a|u|r|v) ]]
++ shift
++ declare -a activity hour
++ activity=(Analysis Development QA Meeting "Research & Design" General "Support/Research" "Mapping/Sow Update")
+++ date +%Y%m%d
++ yyyymmdd=20200903
++ getopts P:J:D:M:C:a:d:q:m:r:g:s:u:A:hs: opt
++ case $opt in
++ hour[5]=2
++ [[ ! 2 =~ ^[0-9]+$ ]]
++ getopts P:J:D:M:C:a:d:q:m:r:g:s:u:A:hs: opt
++ case $opt in
++ hour[6]=2
++ [[ ! 2 =~ ^[0-9]+$ ]]
++ getopts P:J:D:M:C:a:d:q:m:r:g:s:u:A:hs: opt
++ shift 4
++ csv_dir=/home/amir/rcl
++ '[' '!' -d /home/amir/rcl ']'
++ yyyy=2020
++ yy=20
++ mm=09
++ dd=03
++ [[ a =~ ^a ]]
++ csv_file=/home/amir/rcl/rcl_amir_timelog_2009.csv
++ '[' 2 -eq 0 ']'
++ '[' '!' -s /home/amir/rcl/rcl_amir_timelog_2009.csv ']'
++ echo 'Creating new csv file: /home/amir/rcl/rcl_amir_timelog_2009.csv'
+Creating new csv file: /home/amir/rcl/rcl_amir_timelog_2009.csv
++ echo Prefix,JeffNo,Date,Activity,Hour,Comment
++ insert_number=0
++ read -r line
+++ echo Prefix,JeffNo,Date,Activity,Hour,Comment
+++ cut -d, -f3
++ line_date=Date
++ [[ Date =~ ^[0-9]{8}$ ]]
+++ expr 0 + 1
++ insert_number=1
++ read -r line
++ echo 'Prefix: Jeff Number: Date:09/03/2020 Comment:'
+Prefix: Jeff Number: Date:09/03/2020 Comment:
++ for i in '${!hour[@]}'
++ grep ,,20200903,General,2, /home/amir/rcl/rcl_amir_timelog_2009.csv
++ sed -i -s '1s/$/\n,,20200903,General,2,/g' /home/amir/rcl/rcl_amir_timelog_2009.csv
+++ expr 1 + 1
++ insert_number=2
++ echo '    Added Record: General --> 2'
+    Added Record: General --> 2
++ for i in '${!hour[@]}'
++ grep ,,20200903,Support/Research,2, /home/amir/rcl/rcl_amir_timelog_2009.csv
++ sed -i -s '2s/$/\n,,20200903,Support/Research,2,/g' /home/amir/rcl/rcl_amir_timelog_2009.csv
+sed: -e expression #1, char 27: unknown option to `s'
+++ expr 2 + 1
++ insert_number=3
++ echo '    Added Record: Support/Research --> 2'
+    Added Record: Support/Research --> 2
++ echo /home/amir/rcl/rcl_amir_timelog_2009.csv
+/home/amir/rcl/rcl_amir_timelog_2009.csv
+
+
+/home/amir/rcl/rcl_amir_timelog_2009.csv
